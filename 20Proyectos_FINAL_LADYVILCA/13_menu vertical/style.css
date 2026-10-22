@@ -1,0 +1,281 @@
+:root {
+    --width: 260px;
+    --collapsed-width: 60px;
+    --sidebar-bg: #172033;
+    --sidebar-hover: #263650;
+    --accent: #2684ff;
+    --text-color: #f1f5f9;
+    --muted-color: #94a3b8;
+}
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    padding-left: var(--collapsed-width);
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    width: var(--collapsed-width);
+    height: 100vh;
+
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    overflow: hidden;
+
+    box-shadow: 4px 0 18px rgba(0, 0, 0, 0.12);
+
+    transition: width 0.3s ease;
+}
+
+/* Expandir al pasar el cursor o al usar el teclado */
+.sidebar:hover,
+.sidebar:focus-within {
+    width: var(--width);
+}
+
+/* Encabezado */
+.header {
+    flex-shrink: 0;
+}
+
+.bar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 17px;
+    background: #101827;
+    white-space: nowrap;
+}
+
+.menu-icon {
+    min-width: 26px;
+    font-size: 23px;
+    color: var(--accent);
+}
+
+.menu-text {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Usuario */
+.user {
+    width: var(--width);
+    height: 180px;
+    padding: 18px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+    transform: translateX(-20px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.sidebar:hover .user,
+.sidebar:focus-within .user {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.user img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 5px rgba(38, 132, 255, 0.12);
+    margin-bottom: 10px;
+}
+
+.user .name {
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.user .role {
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--muted-color);
+}
+
+/* Lista de enlaces */
+.links {
+    padding-top: 12px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.links a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: var(--width);
+    height: 52px;
+    padding: 0 15px;
+    gap: 18px;
+
+    color: #cbd5e1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Iconos */
+.links a .icon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto de cada opción */
+.links a .title {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .links a .title,
+.sidebar:focus-within .links a .title {
+    opacity: 1;
+}
+
+/* Efectos de interacción */
+.links a:hover {
+    color: white;
+    background: var(--sidebar-hover);
+}
+
+.links a.active {
+    color: white;
+    background: rgba(38, 132, 255, 0.16);
+}
+
+.links a.active::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 0;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    background: var(--accent);
+}
+
+.links a:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: -3px;
+}
+
+/* Pie del menú */
+.footer {
+    width: var(--width);
+    min-height: 55px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--muted-color);
+    white-space: nowrap;
+}
+
+.footer-icon {
+    color: #22c55e;
+    font-size: 14px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.footer .title {
+    opacity: 0;
+    font-size: 12px;
+    transition: opacity 0.2s ease;
+}
+
+.sidebar:hover .footer .title,
+.sidebar:focus-within .footer .title {
+    opacity: 1;
+}
+
+/* Contenido principal */
+.contenido {
+    padding: 40px;
+}
+
+.contenido h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.contenido p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    :root {
+        --width: 230px;
+        --collapsed-width: 55px;
+    }
+
+    .contenido {
+        padding: 25px 18px;
+    }
+
+    .contenido h1 {
+        font-size: 25px;
+    }
+}
+
+/* Reducir animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar,
+    .user,
+    .links a,
+    .links a .title,
+    .footer .title {
+        transition: none;
+    }
+}

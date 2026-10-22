@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkbox y Radio Button</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <span class="tag">COMPONENTES HTML</span>
+            <h1>Controles de selección</h1>
+            <p>
+                Selecciona las opciones que prefieras
+                y descubre cómo funcionan.
+            </p>
+        </header>
+
+        <!-- SECCIÓN CHECKBOX -->
+        <section class="selection-card">
+
+            <div class="card-heading">
+                <div class="icon-box checkbox-icon">
+                    <span>✓</span>
+                </div>
+
+                <div>
+                    <h2>Checkbox</h2>
+                    <p>Puedes seleccionar varias opciones.</p>
+                </div>
+            </div>
+
+            <label class="option">
+                <input type="checkbox" name="intereses" value="diseno">
+
+                <span class="custom-control checkbox">
+                    <span class="checkmark"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Diseño web</strong>
+                    <small>HTML, CSS y diseño de interfaces.</small>
+                </span>
+            </label>
+
+            <label class="option">
+                <input type="checkbox" name="intereses" value="programacion">
+
+                <span class="custom-control checkbox">
+                    <span class="checkmark"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Programación</strong>
+                    <small>Aprender a desarrollar aplicaciones.</small>
+                </span>
+            </label>
+
+            <label class="option">
+                <input type="checkbox" name="intereses" value="bases">
+
+                <span class="custom-control checkbox">
+                    <span class="checkmark"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Bases de datos</strong>
+                    <small>Organizar y administrar información.</small>
+                </span>
+            </label>
+
+            <div class="info">
+                <span class="info-dot"></span>
+                Puedes marcar más de una opción.
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN RADIO BUTTON -->
+        <section class="selection-card">
+
+            <div class="card-heading">
+                <div class="icon-box radio-icon">
+                    <span>●</span>
+                </div>
+
+                <div>
+                    <h2>Radio Button</h2>
+                    <p>Solo puedes elegir una opción.</p>
+                </div>
+            </div>
+
+            <label class="option">
+                <input type="radio" name="nivel" value="principiante">
+
+                <span class="custom-control radio">
+                    <span class="radio-dot"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Principiante</strong>
+                    <small>Estoy empezando a aprender.</small>
+                </span>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="nivel" value="intermedio">
+
+                <span class="custom-control radio">
+                    <span class="radio-dot"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Intermedio</strong>
+                    <small>Ya tengo conocimientos básicos.</small>
+                </span>
+            </label>
+
+            <label class="option">
+                <input type="radio" name="nivel" value="avanzado">
+
+                <span class="custom-control radio">
+                    <span class="radio-dot"></span>
+                </span>
+
+                <span class="option-text">
+                    <strong>Avanzado</strong>
+                    <small>Tengo experiencia en programación.</small>
+                </span>
+            </label>
+
+            <div class="info">
+                <span class="info-dot"></span>
+                Solo una opción puede estar seleccionada.
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            Practica HTML y CSS creando tus propios componentes.
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>mi primer Menú Vertical Responsivo</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <nav class="navbar" aria-label="Menú principal">
+        <div class="mobile">
+
+            <div class="header">
+                <a href="#" class="logo">Logo</a>
+
+                <button
+                    id="bMore"
+                    class="menu-button"
+                    aria-expanded="false"
+                    aria-controls="mobileLinks"
+                    aria-label="Abrir menú">
+                </button>
+            </div>
+
+            <div class="links collapsed" id="mobileLinks">
+                <a href="#services">Servicios</a>
+                <a href="#about">Nosotros</a>
+                <a href="#contact">Contacto</a>
+                <a href="#search">Buscar</a>
+                <a href="#signup">Registrarse</a>
+                <a href="#login">Iniciar sesión</a>
+            </div>
+
+        </div>
+
+        
+        <div class="desktop">
+
+            <a href="#" class="logo">Mi Logo</a>
+
+            <div class="primary">
+                <a href="#services">Servicios</a>
+                <a href="#about">Nosotros</a>
+                <a href="#contact">Contacto</a>
+            </div>
+
+            
+            <div class="secondary full">
+                <a href="#search">Buscar</a>
+                <a href="#signup">Registrarse</a>
+                <a href="#login">Iniciar sesión</a>
+            </div>
+
+         
+            <div class="secondary mini">
+
+                <button
+                    class="more-toggle"
+                    id="desktopMore"
+                    aria-expanded="false"
+                    aria-controls="submenu">
+                    Más 
+                </button>
+
+                <div class="submenu" id="submenu">
+                    <a href="#search">Buscar</a>
+                    <a href="#signup">Registrarse</a>
+                    <a href="#login">Iniciar sesión</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    
+    <main>
+
+        <section class="hero">
+            <h1>Bienvenido a mi pagina web</h1>
+            <p>Un menu moderno, sencillo y adaptado para cualquier dispositivo</p>
+            <a href="#about" class="btn">Conocer mas</a>
+        </section>
+
+        <section class="content" id="services">
+            <h2>Servicios</h2>
+            <p>Aprendizaje para realizar un menu y una pequeña destripcion de funciones</p>
+        </section>
+
+        <section class="content alternate" id="about">
+            <h2>Sobre el contenido</h2>
+            <p>Estoy interesada en el desarrollo web para la creacion de paginas web</p>
+        </section>
+
+        <section class="content" id="contact">
+            <h2>Contacto</h2>
+            <p>Gracias por visitar la pagina web</p>
+        </section>
+
+        <section class="content alternate" id="search">
+            <h2>Buscar</h2>
+            <p>Esta seccion puede contener un buscador en el futuro.</p>
+        </section>
+
+        <section class="content" id="signup">
+            <h2>Registrarse</h2>
+            <p>aqui junto con php/jb podremos realisar un registro</p>
+        </section>
+
+        <section class="content alternate" id="login">
+            <h2>Iniciar sesion</h2>
+            <p>igual como en Registrarse</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Mi pagina web | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

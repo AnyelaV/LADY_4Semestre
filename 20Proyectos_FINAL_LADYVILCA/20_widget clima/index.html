@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Widget del Clima</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconos meteorológicos -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+</head>
+<body>
+
+    <main class="weather-container">
+
+        <!-- CLIMA ACTUAL -->
+        <section class="current">
+
+            <div class="location">
+                <span class="material-symbols-rounded">location_on</span>
+                <span>Ciudad de México</span>
+            </div>
+
+            <div class="day">Clima actual · Hoy</div>
+
+            <div class="main-weather">
+
+                <div class="weather-icon">
+                    <span class="material-symbols-rounded">
+                        partly_cloudy_day
+                    </span>
+                </div>
+
+                <div class="main-info">
+                    <div class="temperature">
+                        20<span class="degree">°</span>
+                    </div>
+
+                    <div class="status">Parcialmente nublado</div>
+                    <div class="feels-like">Sensación térmica: 19°</div>
+                </div>
+
+            </div>
+
+            <div class="temperature-range">
+                <span>
+                    <span class="material-symbols-rounded">arrow_upward</span>
+                    Máx. 23°
+                </span>
+
+                <span>
+                    <span class="material-symbols-rounded">arrow_downward</span>
+                    Mín. 17°
+                </span>
+            </div>
+
+            <!-- INFORMACIÓN ADICIONAL -->
+            <div class="more">
+
+                <div class="item">
+                    <span class="material-symbols-rounded">air</span>
+                    <div class="value">9 km/h</div>
+                    <div class="type">Viento</div>
+                </div>
+
+                <div class="item">
+                    <span class="material-symbols-rounded">water_drop</span>
+                    <div class="value">30%</div>
+                    <div class="type">Prob. de lluvia</div>
+                </div>
+
+                <div class="item">
+                    <span class="material-symbols-rounded">humidity_percentage</span>
+                    <div class="value">65%</div>
+                    <div class="type">Humedad</div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PRONÓSTICO -->
+        <section class="forecast">
+
+            <h2>Pronóstico de 5 días</h2>
+
+            <div class="forecast-list">
+
+                <div class="forecast-day">
+                    <div class="day-name">Lun</div>
+                    <span class="material-symbols-rounded cloudy">cloud</span>
+                    <div class="day-status">Nublado</div>
+                    <div class="day-temperatures">
+                        <span class="high">20°</span>
+                        <span class="low">17°</span>
+                    </div>
+                </div>
+
+                <div class="forecast-day">
+                    <div class="day-name">Mar</div>
+                    <span class="material-symbols-rounded rainy">rainy</span>
+                    <div class="day-status">Lluvia</div>
+                    <div class="day-temperatures">
+                        <span class="high">19°</span>
+                        <span class="low">15°</span>
+                    </div>
+                </div>
+
+                <div class="forecast-day">
+                    <div class="day-name">Mié</div>
+                    <span class="material-symbols-rounded stormy">thunderstorm</span>
+                    <div class="day-status">Tormenta</div>
+                    <div class="day-temperatures">
+                        <span class="high">21°</span>
+                        <span class="low">16°</span>
+                    </div>
+                </div>
+
+                <div class="forecast-day">
+                    <div class="day-name">Jue</div>
+                    <span class="material-symbols-rounded sunny">wb_twilight</span>
+                    <div class="day-status">Despejado</div>
+                    <div class="day-temperatures">
+                        <span class="high">24°</span>
+                        <span class="low">18°</span>
+                    </div>
+                </div>
+
+                <div class="forecast-day">
+                    <div class="day-name">Vie</div>
+                    <span class="material-symbols-rounded sunny">sunny</span>
+                    <div class="day-status">Soleado</div>
+                    <div class="day-temperatures">
+                        <span class="high">25°</span>
+                        <span class="low">17°</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                Datos meteorológicos de ejemplo
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

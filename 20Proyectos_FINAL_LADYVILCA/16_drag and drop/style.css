@@ -1,0 +1,229 @@
+body {
+    background: linear-gradient(135deg, #2c67b3, #4d86f0);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.upload-container {
+    margin: 50px auto;
+    width: 500px;
+    max-width: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.upload-container > .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #26354a;
+}
+
+.upload-container .description {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ÁREA PARA ARRASTRAR ARCHIVOS */
+.upload-container .drag-drop {
+    border: 2px dashed #b9c9e2;
+    border-radius: 8px;
+    padding: 30px 15px;
+    margin: 25px 0;
+    line-height: 1.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    color: #777;
+    gap: 12px;
+    background-color: #f8fbff;
+    transition: 0.3s;
+}
+
+.upload-container .drag-drop:hover,
+.upload-container .drag-drop.active {
+    border-color: #4d86f0;
+    background-color: #edf4ff;
+}
+
+.drag-drop .icon svg {
+    width: 65px;
+    height: 65px;
+    color: #4d86f0;
+}
+
+.drag-drop .btn {
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #4d86f0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    min-width: 180px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drag-drop .btn:hover {
+    background-color: #3269cf;
+    transform: translateY(-2px);
+}
+
+.hint {
+    font-size: 12px;
+    font-weight: normal;
+    color: #aaa;
+}
+
+/* TÍTULO DE ARCHIVOS */
+.upload-container .title-section {
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 15px;
+}
+
+/* LISTA DE ARCHIVOS */
+.upload-container .uploaded-files {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.uploaded-files .file {
+    border: 1px solid #e2e7ef;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+
+.uploaded-files .file:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.file .icon {
+    width: 42px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.file-icon {
+    display: inline-flex;
+    width: 40px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    background: #edf2ff;
+    color: #4d86f0;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.file-icon.pdf {
+    background: #ffeded;
+    color: #e44d4d;
+}
+
+.file-icon.doc {
+    background: #eaf2ff;
+    color: #2563c7;
+}
+
+.file-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-title .name {
+    font-size: 13px;
+    color: #333;
+    overflow-wrap: anywhere;
+    margin-bottom: 5px;
+}
+
+.file-title .size {
+    font-size: 12px;
+    color: #999;
+}
+
+/* BARRA DE PROGRESO */
+.file-title .progress {
+    height: 5px;
+    width: 100%;
+    background-color: #e5e7eb;
+    margin: 8px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.file-title .progress-60 {
+    background-color: #4d86f0;
+    height: 100%;
+    width: 60%;
+    border-radius: 5px;
+}
+
+/* BOTÓN ELIMINAR */
+.file .actions button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    color: #888;
+    background: transparent;
+    transition: 0.2s;
+}
+
+.file .actions button:hover {
+    background-color: #ffeded;
+    color: #e44d4d;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+@media screen and (max-width: 600px) {
+    .upload-container {
+        margin: 20px auto;
+        padding: 25px 18px;
+    }
+
+    .upload-container > .title {
+        font-size: 21px;
+    }
+
+    .upload-container .drag-drop {
+        padding: 25px 10px;
+    }
+
+    .uploaded-files .file {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .file .icon {
+        width: 35px;
+    }
+
+    .file-icon {
+        width: 34px;
+        height: 38px;
+        font-size: 10px;
+    }
+}

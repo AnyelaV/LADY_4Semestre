@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+/* Contenedor principal */
+.slider-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Título */
+.slider-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* Ventana del slider */
+.slider-viewport {
+    width: 100%;
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slider-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+/* Diapositivas */
+.slide {
+    position: relative;
+
+    flex: 0 0 100%;
+    min-width: 0;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Número decorativo */
+.slide span {
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.25;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto de cada diapositiva */
+.slide h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.slide p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Colores y degradados */
+.slide1 {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+.slide2 {
+    background: linear-gradient(135deg, #1e3c72, #5b9bd5);
+}
+
+.slide3 {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+.slide4 {
+    background: linear-gradient(135deg, #11998e, #38efc3);
+}
+
+.slide5 {
+    background: linear-gradient(135deg, #ec008c, #fc6767);
+}
+
+/* Botones de navegación */
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.links a {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+.links a:hover {
+    background: #ffffff;
+    color: #243b55;
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al presionar */
+.links a:active {
+    transform: scale(0.92);
+}
+
+/* Texto inferior */
+.footer {
+    margin-top: 20px;
+    color: #aebdce;
+    font-size: 13px;
+}
+
+/* Diseño para celulares */
+@media (max-width: 600px) {
+    .slider-container h1 {
+        font-size: 26px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .slide {
+        height: 300px;
+    }
+
+    .slide span {
+        font-size: 75px;
+    }
+
+    .slide h2 {
+        font-size: 24px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+
+    .links {
+        gap: 9px;
+        margin-top: 20px;
+    }
+
+    .links a {
+        width: 40px;
+        height: 40px;
+    }
+}

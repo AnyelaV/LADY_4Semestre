@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Vertical</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <!-- Encabezado del menú -->
+        <header class="header">
+            <div class="bar">
+                <span class="menu-icon">☰</span>
+                <span class="menu-text">Mi menú</span>
+            </div>
+
+            <!-- Información del usuario -->
+            <div class="user">
+                <img src="profile1.jpeg" alt="Foto de Marco Riveras">
+                <div class="name">Marco Riveras</div>
+                <div class="role">Administrador</div>
+            </div>
+        </header>
+
+        <!-- Opciones del menú -->
+        <div class="links">
+
+            <a href="#" class="active">
+                <div class="icon">
+                    <span class="iconify"
+                        data-icon="flat-color-icons:assistant"
+                        data-width="28"
+                        data-height="28"></span>
+                </div>
+                <span class="title">Asistencia remota</span>
+            </a>
+
+            <a href="#">
+                <div class="icon">
+                    <span class="iconify"
+                        data-icon="mdi:home-outline"
+                        data-width="26"
+                        data-height="26"></span>
+                </div>
+                <span class="title">Inicio</span>
+            </a>
+
+            <a href="#">
+                <div class="icon">
+                    <span class="iconify"
+                        data-icon="mdi:account-outline"
+                        data-width="26"
+                        data-height="26"></span>
+                </div>
+                <span class="title">Usuarios</span>
+            </a>
+
+            <a href="#">
+                <div class="icon">
+                    <span class="iconify"
+                        data-icon="mdi:cog-outline"
+                        data-width="26"
+                        data-height="26"></span>
+                </div>
+                <span class="title">Configuración</span>
+            </a>
+
+            <a href="#">
+                <div class="icon">
+                    <span class="iconify"
+                        data-icon="mdi:help-circle-outline"
+                        data-width="26"
+                        data-height="26"></span>
+                </div>
+                <span class="title">Ayuda</span>
+            </a>
+
+        </div>
+
+        <!-- Pie del menú -->
+        <div class="footer">
+            <span class="footer-icon">●</span>
+            <span class="title">Sistema conectado</span>
+        </div>
+    </nav>
+
+    <main class="contenido">
+        <h1>Bienvenido</h1>
+        <p>Selecciona una opción del menú lateral para comenzar.</p>
+    </main>
+
+    <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+</body>
+</html>

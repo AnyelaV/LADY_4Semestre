@@ -1,0 +1,128 @@
+
+/* Configuración general de la página */
+body {
+    margin: 0;
+    padding: 30px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Título principal */
+h1 {
+    margin: 0;
+    text-align: center;
+    color: #0f172a;
+    font-size: 28px;
+}
+
+/* Texto debajo del título */
+.descripcion {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+/* Permite desplazar la tabla horizontalmente */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Diseño general de la tabla */
+table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: white;
+}
+
+/* Título de la tabla */
+caption {
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #334155;
+    caption-side: top;
+}
+
+/* Celdas y encabezados */
+th,
+td {
+    border: 1px solid #e2e8f0;
+    padding: 13px 12px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Encabezado de la tabla */
+thead {
+    background-color: #172554;
+    color: white;
+}
+
+/* Texto del encabezado */
+th {
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Filas pares con fondo gris claro */
+tbody tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+/* Filas impares con fondo blanco */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Efecto cuando pasamos el mouse */
+tbody tr:hover {
+    background-color: #bfdbfe;
+    transition: background-color 0.2s ease;
+}
+
+/* Centrar las columnas numéricas */
+td:nth-child(n + 3) {
+    text-align: center;
+}
+
+/* Pie de la tabla */
+tfoot {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        margin: 10px auto;
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    caption {
+        font-size: 17px;
+    }
+}

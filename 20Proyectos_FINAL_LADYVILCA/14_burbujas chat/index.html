@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat estilo WhatsApp</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+
+        <!-- ENCABEZADO DEL CHAT -->
+        <header class="chat-header">
+            <div class="avatar">A</div>
+
+            <div class="contact-info">
+                <h2>Mi contacto</h2>
+                <span>En línea</span>
+            </div>
+
+            <div class="header-icons">
+                <span>📹</span>
+                <span>📞</span>
+                <span>⋮</span>
+            </div>
+        </header>
+
+        <!-- ÁREA DE MENSAJES -->
+        <main class="chat-messages">
+
+            <div class="date-divider">
+                <span>HOY</span>
+            </div>
+
+            <!-- MENSAJES ENVIADOS -->
+            <div class="bubble-container right">
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        Hola, ¿cómo estás?
+                        <span class="bubble-info">
+                            9:30 a. m. <span class="checks">✓✓</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        ¡Espero que estés bien!
+                        <span class="bubble-info">
+                            9:31 a. m. <span class="checks">✓✓</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        ¿Qué haces?
+                        <span class="bubble-info">
+                            9:32 a. m. <span class="checks">✓✓</span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MENSAJES RECIBIDOS -->
+            <div class="bubble-container left">
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        ¡Hola! Estoy muy bien.
+                        <span class="bubble-info">9:33 a. m.</span>
+                    </div>
+                </div>
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        Gracias por preguntar 😊
+                        <span class="bubble-info">9:34 a. m.</span>
+                    </div>
+                </div>
+
+                <div class="bubble">
+                    <div class="bubble-text">
+                        ¿Y tú cómo estás?
+                        <span class="bubble-info">9:35 a. m.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- CAJA PARA ESCRIBIR -->
+        <footer class="chat-footer">
+            <button class="emoji-button" type="button">☺</button>
+
+            <input
+                type="text"
+                placeholder="Escribe un mensaje..."
+                aria-label="Escribe un mensaje"
+            >
+
+            <button class="send-button" type="button"
+                aria-label="Enviar mensaje">➤</button>
+        </footer>
+
+    </div>
+
+</body>
+</html>

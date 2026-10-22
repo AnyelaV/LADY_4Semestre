@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modal moderno</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- FONDO Y CONTENEDOR DEL MODAL -->
+    <div class="modal-container" id="modalContainer">
+
+        <div class="modal" role="dialog"
+             aria-modal="true"
+             aria-labelledby="modalTitle">
+
+            <!-- CONTENIDO -->
+            <div class="content">
+
+                <div class="icon">
+                    <svg viewBox="0 0 24 24"
+                         width="30" height="30"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+                        <path d="M12 8v4"></path>
+                        <path d="M12 16h.01"></path>
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                </div>
+
+                <div class="message">
+
+                    <div class="title">
+                        <h3 id="modalTitle">Este es un modal</h3>
+                    </div>
+
+                    <div class="text">
+                        ¿Deseas confirmar los cambios?
+                        Esta acción creará un nuevo elemento.
+                    </div>
+
+                </div>
+
+                <button class="close-btn"
+                        id="closeBtn"
+                        aria-label="Cerrar modal"
+                        type="button">
+                    &times;
+                </button>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="actions">
+
+                <button class="btn-cancel"
+                        id="cancelBtn"
+                        type="button">
+                    Cancelar
+                </button>
+
+                <button class="btn-confirm"
+                        id="confirmBtn"
+                        type="button">
+                    Crear elemento
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MENSAJE DE RESULTADO -->
+    <div class="toast" id="toast" role="status"
+         aria-live="polite"></div>
+
+    <script>
+        const modalContainer = document.getElementById("modalContainer");
+        const confirmBtn = document.getElementById("confirmBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const closeBtn = document.getElementById("closeBtn");
+        const toast = document.getElementById("toast");
+
+        function cerrarModal() {
+            modalContainer.classList.add("hidden");
+        }
+
+        cancelBtn.addEventListener("click", () => {
+            cerrarModal();
+            toast.textContent = "Operación cancelada.";
+            toast.classList.add("show");
+        });
+
+        closeBtn.addEventListener("click", cerrarModal);
+
+        confirmBtn.addEventListener("click", () => {
+            cerrarModal();
+            toast.textContent = "¡Elemento creado correctamente!";
+            toast.classList.add("show");
+        });
+    </script>
+
+</body>
+</html>

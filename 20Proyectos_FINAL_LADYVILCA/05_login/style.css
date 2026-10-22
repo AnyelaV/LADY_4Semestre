@@ -1,0 +1,560 @@
+
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6c4cff;
+    --primary-dark: #5235db;
+    --text: #202033;
+    --text-light: #77778c;
+    --border: #e4e4ee;
+    --white: #ffffff;
+    --background: #f3f2ff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    background:
+        radial-gradient(circle at top left, #ded8ff, transparent 40%),
+        linear-gradient(135deg, #f4f2ff, #e9e7ff);
+    color: var(--text);
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+.form-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 700px;
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(56, 42, 125, 0.16);
+    animation: appear 0.7s ease;
+}
+
+/* ==============================
+   FORMULARIO
+============================== */
+
+.login-container {
+    flex: 1;
+    min-width: 0;
+    padding: 55px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    color: var(--white);
+    background: linear-gradient(135deg, #856dff, #5b3be8);
+    font-size: 27px;
+    box-shadow: 0 8px 20px rgba(108, 76, 255, 0.25);
+}
+
+.login-container h1 {
+    font-size: 34px;
+    font-weight: 750;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+/* ==============================
+   CAMPOS DE ENTRADA
+============================== */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38384d;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 53px;
+    padding: 0 15px;
+    background: #fafaff;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    transition: border-color 0.25s, box-shadow 0.25s,
+                background 0.25s;
+}
+
+.input-container > i {
+    color: #9694b0;
+    font-size: 15px;
+}
+
+.input-container:focus-within {
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(108, 76, 255, 0.10);
+}
+
+.input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 16px 0;
+}
+
+.input::placeholder {
+    color: #aaa9bd;
+}
+
+.toggle-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0 8px 8px;
+    border: none;
+    background: transparent;
+    color: #9290a8;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+}
+
+/* ==============================
+   OPCIONES DEL FORMULARIO
+============================== */
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 3px 0 27px;
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.remember input {
+    width: 15px;
+    height: 15px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.forgot-password {
+    font-size: 12px;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+.btn {
+    width: 100%;
+    min-height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s,
+                background 0.2s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-login {
+    justify-content: space-between;
+    padding: 0 20px;
+    color: var(--white);
+    background: linear-gradient(135deg, #795dff, #5c3ce8);
+    border: none;
+    box-shadow: 0 8px 18px rgba(108, 76, 255, 0.22);
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #6848f4, #492bcf);
+    box-shadow: 0 10px 24px rgba(108, 76, 255, 0.32);
+}
+
+.btn-login i {
+    font-size: 14px;
+}
+
+/* ==============================
+   SEPARADOR
+============================== */
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 27px 0 20px;
+    color: #9291a6;
+    font-size: 12px;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* ==============================
+   AUTENTICACIÓN SOCIAL
+============================== */
+
+.providers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.providers .btn {
+    min-height: 46px;
+    padding: 10px 6px;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: #4c4b60;
+}
+
+.btn-google:hover,
+.btn-facebook:hover,
+.btn-twitter:hover {
+    background: #f5f3ff;
+    border-color: #c9bfff;
+    color: var(--primary-dark);
+}
+
+.btn-google i {
+    color: #db4437;
+}
+
+.btn-facebook i {
+    color: #1877f2;
+}
+
+.btn-twitter i {
+    color: #111111;
+}
+
+/* ==============================
+   REGISTRO
+============================== */
+
+.register {
+    margin-top: 28px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.register a {
+    margin-left: 4px;
+}
+
+/* ==============================
+   PANEL DE BIENVENIDA
+============================== */
+
+.welcome-screen-container {
+    position: relative;
+    flex: 0 0 43%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px;
+    overflow: hidden;
+    color: var(--white);
+    background: linear-gradient(145deg, #8065ff, #5232d5 75%, #4025b5);
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.welcome-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin-bottom: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(8px);
+    font-size: 34px;
+}
+
+.welcome-content h2 {
+    margin-bottom: 20px;
+    font-size: clamp(30px, 3vw, 43px);
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+}
+
+.welcome-content > p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.welcome-features {
+    margin-top: 35px;
+}
+
+.welcome-features p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 13px;
+}
+
+.welcome-features i {
+    color: #c7ffdc;
+    font-size: 17px;
+}
+
+/* Círculos decorativos */
+
+.decoration {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 360px;
+    height: 360px;
+    top: -120px;
+    right: -170px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.decoration-two {
+    width: 300px;
+    height: 300px;
+    bottom: -160px;
+    left: -110px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.welcome-footer {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   ANIMACIÓN
+============================== */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================
+   TABLETS
+============================== */
+
+@media screen and (max-width: 1000px) {
+    .form-container {
+        max-width: 760px;
+        min-height: 650px;
+    }
+
+    .login-container {
+        padding: 45px 35px;
+    }
+
+    .welcome-screen-container {
+        flex-basis: 38%;
+        padding: 35px 25px;
+    }
+
+    .welcome-content h2 {
+        font-size: 32px;
+    }
+
+    .providers {
+        gap: 7px;
+    }
+}
+
+/* ==============================
+   CELULARES
+============================== */
+
+@media screen and (max-width: 650px) {
+    body {
+        padding: 18px 12px;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+
+    .form-container {
+        max-width: 440px;
+        min-height: auto;
+        margin: auto 0;
+        border-radius: 20px;
+    }
+
+    .login-container {
+        width: 100%;
+        padding: 35px 24px;
+    }
+
+    .login-container h1 {
+        font-size: 29px;
+    }
+
+    .subtitle {
+        margin-bottom: 28px;
+        font-size: 13px;
+    }
+
+    .welcome-screen-container {
+        display: none;
+    }
+
+    .options {
+        align-items: flex-start;
+    }
+
+    .forgot-password {
+        text-align: right;
+    }
+
+    .providers {
+        gap: 8px;
+    }
+
+    .providers .btn {
+        font-size: 11px;
+    }
+}
+
+/* ==============================
+   CELULARES PEQUEÑOS
+============================== */
+
+@media screen and (max-width: 360px) {
+    .login-container {
+        padding: 30px 17px;
+    }
+
+    .providers {
+        grid-template-columns: 1fr;
+    }
+
+    .options {
+        flex-direction: column;
+    }
+}
+
+/* Accesibilidad: reducir movimiento */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

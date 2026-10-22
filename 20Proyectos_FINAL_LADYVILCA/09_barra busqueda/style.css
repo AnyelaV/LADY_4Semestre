@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f3f6fc, #e8efff);
+    color: #1f2937;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 12px;
+    color: #172554;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* Barra de búsqueda */
+.search-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 10px 8px 22px;
+
+    background-color: #ffffff;
+    border: 1px solid #dbe2ea;
+    border-radius: 50px;
+
+    box-shadow: 0 8px 25px rgba(31, 41, 55, 0.07);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Efecto cuando se selecciona la barra */
+.search-bar:focus-within {
+    border-color: #3978f6;
+    box-shadow: 0 0 0 4px rgba(57, 120, 246, 0.12),
+                0 8px 25px rgba(31, 41, 55, 0.07);
+}
+
+/* Campo de texto */
+.search-bar input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    padding: 12px 0;
+    font-size: 17px;
+    color: #1f2937;
+}
+
+.search-bar input::placeholder {
+    color: #9ca3af;
+}
+
+/* Oculta el botón de limpiar de algunos navegadores
+   para mantener un aspecto uniforme */
+.search-bar input::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+/* Grupo de botones */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Botones con iconos */
+.actions button {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #64748b;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.2s ease;
+}
+
+/* Tamaño de los SVG */
+.actions button svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Efecto al pasar el cursor */
+.actions button:hover {
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+/* Efecto al presionar */
+.actions button:active {
+    transform: scale(0.92);
+}
+
+/* Indicador de teclado */
+.actions button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 2px;
+}
+
+/* Botón principal de búsqueda */
+.actions .search-button {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.actions .search-button:hover {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 480px) {
+    .container {
+        padding: 55px 16px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .search-bar {
+        padding: 6px 7px 6px 15px;
+        gap: 4px;
+    }
+
+    .search-bar input {
+        font-size: 15px;
+    }
+
+    .actions {
+        gap: 1px;
+    }
+
+    .actions button {
+        width: 36px;
+        height: 40px;
+    }
+
+    .actions button svg {
+        width: 21px;
+        height: 21px;
+    }
+}

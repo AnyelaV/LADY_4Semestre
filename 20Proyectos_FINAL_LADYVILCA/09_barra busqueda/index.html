@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barra de búsqueda</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>¿Qué estás buscando?</h1>
+        <p class="subtitle">Escribe algo o utiliza una de las herramientas.</p>
+
+        <form class="search-bar" action="#" method="get">
+
+            <input
+                type="search"
+                name="q"
+                placeholder="Buscar aquí..."
+                aria-label="Escribe lo que deseas buscar"
+            >
+
+            <div class="actions">
+
+                <!-- Botón de micrófono -->
+                <button type="button" aria-label="Búsqueda por voz">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 -960 960 960"
+                         aria-hidden="true">
+                        <path d="M480-400q-50 0-85-35t-35-85v-240q0-50 35-85t85-35q50 0 85 35t35 85v240q0 50-35 85t-85 35Zm-40 280v-123q-104-14-172-93t-68-184h80q0 83 58.5 141.5T480-320q83 0 141.5-58.5T680-520h80q0 105-68 184t-172 93v123h-80Zm40-360q17 0 28.5-11.5T520-520v-240q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760v240q0 17 11.5 28.5T480-480Z"/>
+                    </svg>
+                </button>
+
+                <!-- Botón de escáner -->
+                <button type="button" aria-label="Escanear">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 -960 960 960"
+                         aria-hidden="true">
+                        <path d="M80-720v-200h200v80H160v120H80Zm720 0v-120H680v-80h200v200h-80ZM80-40v-200h80v120h120v80H80Zm600 0v-80h120v-120h80v200H680ZM280-240h400v-480H280v480Zm0 80q-33 0-56.5-23.5T200-240v-480q0-33 23.5-56.5T280-800h400q33 0 56.5 23.5T760-720v480q0 33-23.5 56.5T680-160H280Zm80-400h240v-80H360v80Zm0 120h240v-80H360v80Zm0 120h240v-80H360v80Z"/>
+                    </svg>
+                </button>
+
+                <!-- Botón de búsqueda -->
+                <button type="submit" class="search-button"
+                        aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         viewBox="0 -960 960 960"
+                         aria-hidden="true">
+                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                    </svg>
+                </button>
+
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #222;
+}
+
+/* BARRA DE NAVEGACIÓN */
+.navbar {
+    background-color: #151515;
+    color: white;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    color: #151515;
+    background-color: #00e5ff;
+}
+
+.logo {
+    min-width: 180px;
+    font-size: 23px;
+    font-weight: bold;
+    color: #00e5ff !important;
+    letter-spacing: 1px;
+}
+
+/* MENÚ MÓVIL */
+.navbar .mobile {
+    display: none;
+}
+
+.mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.mobile .header .logo {
+    padding: 15px 10px;
+}
+
+.menu-button,
+.more-toggle {
+    border: none;
+    background-color: #6c3ce7;
+    color: white;
+    padding: 15px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover,
+.more-toggle:hover {
+    background-color: #5125bd;
+}
+
+.mobile .links {
+    background-color: #222;
+    overflow: hidden;
+    max-height: 500px;
+    transition: max-height 0.35s ease;
+}
+
+.mobile .links.collapsed {
+    max-height: 0;
+}
+
+.mobile .links a {
+    padding: 16px 25px;
+    border-top: 1px solid #383838;
+}
+
+/* MENÚ DE ESCRITORIO */
+.desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.desktop .primary,
+.desktop .secondary.full {
+    display: flex;
+    align-items: center;
+}
+
+.desktop .secondary.mini {
+    display: none;
+    position: relative;
+}
+
+.desktop .secondary.mini .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: #222;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.desktop .secondary.mini .submenu.show {
+    display: block;
+}
+
+.desktop .submenu a {
+    padding: 15px 20px;
+    border-bottom: 1px solid #383838;
+}
+
+/* PRESENTACIÓN PRINCIPAL */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #20134b, #5140a8);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 25px;
+    background-color: #00e5ff;
+    color: #151515;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #7af3ff;
+    transform: translateY(-3px);
+}
+
+/* SECCIONES */
+.content {
+    text-align: center;
+    padding: 55px 20px;
+    background-color: white;
+}
+
+.content h2 {
+    color: #5136ba;
+    font-size: 28px;
+}
+
+.content p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.alternate {
+    background-color: #e9e8f5;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    text-align: center;
+    padding: 22px 15px;
+    background-color: #151515;
+    color: white;
+}
+
+/* TABLETS Y PANTALLAS MEDIANAS */
+@media screen and (max-width: 830px) {
+    .desktop .logo {
+        min-width: 100px;
+    }
+
+    .desktop .secondary.full {
+        display: none;
+    }
+
+    .desktop .secondary.mini {
+        display: block;
+    }
+
+    .hero {
+        padding: 75px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
+
+/* CELULARES */
+@media screen and (max-width: 500px) {
+    .desktop {
+        display: none;
+    }
+
+    .navbar .mobile {
+        display: block;
+    }
+
+    .mobile .header .logo {
+        min-width: auto;
+        font-size: 21px;
+    }
+
+    .menu-button {
+        padding: 16px;
+    }
+
+    .hero {
+        padding: 60px 18px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 40px 18px;
+    }
+}

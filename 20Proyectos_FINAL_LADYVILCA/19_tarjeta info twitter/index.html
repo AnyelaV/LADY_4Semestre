@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tarjeta de Perfil - Twitter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="profile-container">
+
+        <h1>Tarjeta de perfil</h1>
+        <p class="subtitle">Pasa el cursor sobre la foto para ver el perfil.</p>
+
+        <div class="profile">
+
+            <!-- Foto que activa la tarjeta -->
+            <button class="profile-trigger" aria-label="Mostrar perfil de Marcos Rivas">
+                <img src="profile1.jpeg" alt="Foto de Marcos Rivas">
+            </button>
+
+            <!-- Tarjeta emergente -->
+            <div class="info">
+
+                <!-- Portada -->
+                <div class="cover">
+                    <span class="cover-decoration">X</span>
+                </div>
+
+                <!-- Encabezado -->
+                <div class="header">
+                    <div class="photo">
+                        <img src="profile1.jpeg" alt="Marcos Rivas">
+                    </div>
+
+                    <button class="follow-button">Seguir</button>
+                </div>
+
+                <!-- Información del usuario -->
+                <div class="user-info">
+                    <div class="name">
+                        <a href="#">Marcos Rivas Rojas</a>
+                        <span class="verified" aria-label="Cuenta verificada">✓</span>
+                    </div>
+
+                    <div class="username">@vidamrr</div>
+                </div>
+
+                <!-- Descripción -->
+                <div class="description">
+                    Desarrollador web y
+                    <strong>ingeniero de software</strong>
+                    en Microsoft.
+                    <a href="#">#JavaScript</a>
+                    <a href="#">#DesarrolloWeb</a>
+                </div>
+
+                <!-- Estadísticas -->
+                <div class="followers-container">
+
+                    <a href="#">
+                        <span class="number">100 mil</span>
+                        Siguiendo
+                    </a>
+
+                    <a href="#">
+                        <span class="number">1 millón</span>
+                        Seguidores
+                    </a>
+
+                </div>
+
+                <!-- Seguidores en común -->
+                <div class="other">
+                    <a href="#" class="mutual-link">
+
+                        <div class="photos">
+                            <img src="profile1.jpeg" alt="">
+                            <img src="profile1.jpeg" alt="">
+                            <img src="profile1.jpeg" alt="">
+                        </div>
+
+                        <p>
+                            <strong>Elon Musk, Bill Gates</strong>
+                            y otras 80 personas que sigues
+                            también siguen esta cuenta.
+                        </p>
+
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

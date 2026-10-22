@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #30205f,
+        #673ab7,
+        #8e44ad
+    );
+
+    color: white;
+}
+
+
+.progress-section {
+    width: 100%;
+    max-width: 450px;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter: blur(12px);
+}
+
+.progress-section h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: #e3d9ff;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.progressbar-container {
+    width: 220px;
+    height: 220px;
+
+    margin: 35px auto;
+}
+
+.outer-box {
+    position: relative;
+
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+.inner-box {
+    width: 160px;
+    height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #382568;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(0, 0, 0, 0.08);
+
+    z-index: 1;
+}
+
+.percentage {
+    font-size: 38px;
+    font-weight: bold;
+
+    color: white;
+
+    letter-spacing: -1px;
+}
+
+.label {
+    margin-top: 7px;
+
+    color: #d6c8ff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.progress-svg {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    transform: rotate(-90deg);
+
+    overflow: visible;
+}
+
+/* Círculo de fondo */
+
+.progress-background {
+    fill: none;
+
+    stroke: rgba(255, 255, 255, 0.15);
+    stroke-width: 12;
+}
+
+/* Círculo de progreso */
+
+.progress-value {
+    fill: none;
+
+    stroke: url(#gradientColor);
+    stroke-width: 12;
+
+    stroke-linecap: round;
+
+    /* Circunferencia aproximada: 2 × π × 80 */
+    stroke-dasharray: 502.65;
+    stroke-dashoffset: 502.65;
+
+    animation: loading 1.8s ease-out forwards;
+
+    filter: drop-shadow(0 0 5px rgba(255, 77, 141, 0.4));
+}
+
+
+
+@keyframes loading {
+    from {
+        stroke-dashoffset: 502.65;
+    }
+
+    to {
+        /* 50% de la circunferencia permanece sin dibujar */
+        stroke-dashoffset: 251.33;
+    }
+}
+
+
+.footer-text {
+    color: #e3d9ff;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+@media screen and (max-width: 400px) {
+    .progress-section {
+        padding: 30px 15px;
+    }
+
+    .progress-section h1 {
+        font-size: 25px;
+    }
+
+    .progressbar-container,
+    .outer-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .progress-svg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .inner-box {
+        width: 145px;
+        height: 145px;
+    }
+
+    .percentage {
+        font-size: 33px;
+    }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-value {
+        animation: none;
+        stroke-dashoffset: 251.33;
+    }
+}

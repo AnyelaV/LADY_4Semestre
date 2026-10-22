@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="upload-container">
+
+        <div class="title">UPLOAD FILES</div>
+
+        <div class="description">
+            Upload the files you want to share with your team
+        </div>
+
+        <div class="drag-drop" id="dropArea">
+
+            <div class="icon">
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 16V4"></path>
+                    <path d="M7 9l5-5 5 5"></path>
+                    <path d="M4 16v4h16v-4"></path>
+                </svg>
+            </div>
+
+            <div>
+                Drag and Drop the files here
+                <br>
+                Or
+            </div>
+
+            <button class="btn" id="browseBtn" type="button">
+                Browse Files
+            </button>
+
+            <input type="file" id="fileInput" multiple hidden>
+
+            <div class="hint">You can select multiple files</div>
+        </div>
+
+        <div class="title-section">UPLOADED FILES</div>
+
+        <div class="uploaded-files" id="uploadedFiles">
+
+            <div class="file">
+                <div class="icon">
+                    <span class="file-icon pdf">PDF</span>
+                </div>
+
+                <div class="file-title">
+                    <div class="name">Documento Importante.pdf</div>
+                    <div class="progress">
+                        <div class="progress-60"></div>
+                    </div>
+                    <div class="size">60% uploaded</div>
+                </div>
+
+                <div class="actions">
+                    <button class="delete-btn" type="button"
+                            aria-label="Eliminar documento">×</button>
+                </div>
+            </div>
+
+            <div class="file">
+                <div class="icon">
+                    <span class="file-icon doc">DOC</span>
+                </div>
+
+                <div class="file-title">
+                    <div class="name">Documento Word.docx</div>
+                    <div class="size">60 KB</div>
+                </div>
+
+                <div class="actions">
+                    <button class="delete-btn" type="button"
+                            aria-label="Eliminar documento">×</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const browseBtn = document.getElementById("browseBtn");
+        const dropArea = document.getElementById("dropArea");
+        const uploadedFiles = document.getElementById("uploadedFiles");
+
+        browseBtn.addEventListener("click", () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", () => {
+            addFiles(fileInput.files);
+            fileInput.value = "";
+        });
+
+        function addFiles(files) {
+            Array.from(files).forEach(file => {
+                const fileElement = document.createElement("div");
+                fileElement.className = "file";
+
+                const extension = file.name.split(".").pop().toUpperCase();
+                const size = file.size < 1024 * 1024
+                    ? (file.size / 1024).toFixed(1) + " KB"
+                    : (file.size / (1024 * 1024)).toFixed(1) + " MB";
+
+                fileElement.innerHTML = `
+                    <div class="icon">
+                        <span class="file-icon">${extension.slice(0, 4)}</span>
+                    </div>
+                    <div class="file-title">
+                        <div class="name"></div>
+                        <div class="size">${size}</div>
+                    </div>
+                    <div class="actions">
+                        <button class="delete-btn" type="button"
+                                aria-label="Eliminar archivo">×</button>
+                    </div>
+                `;
+
+                fileElement.querySelector(".name").textContent = file.name;
+                uploadedFiles.prepend(fileElement);
+            });
+        }
+
+        dropArea.addEventListener("dragover", event => {
+            event.preventDefault();
+            dropArea.classList.add("active");
+        });
+
+        dropArea.addEventListener("dragleave", () => {
+            dropArea.classList.remove("active");
+        });
+
+        dropArea.addEventListener("drop", event => {
+            event.preventDefault();
+            dropArea.classList.remove("active");
+            addFiles(event.dataTransfer.files);
+        });
+
+        uploadedFiles.addEventListener("click", event => {
+            const button = event.target.closest(".delete-btn");
+
+            if (button) {
+                button.closest(".file").remove();
+            }
+        });
+    </script>
+
+</body>
+</html>

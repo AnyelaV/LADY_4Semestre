@@ -1,0 +1,116 @@
+
+/* Configuración general de la página */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f2fe, #f5f3ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tarjeta principal */
+.contenedor {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+.contenedor h2 {
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.contenedor p {
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+/* Contenedor de la campana */
+.notification {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 10%;
+    animation: ring 3s ease-in-out infinite;
+}
+
+/* Dibujo de la campana */
+.bell {
+    width: 60px;
+    height: 60px;
+    fill: #2563eb;
+}
+
+/* Número de notificaciones */
+.count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 32px;
+    height: 32px;
+    background-color: #ef4444;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Animación de la campana */
+@keyframes ring {
+    0%, 70%, 100% {
+        transform: rotate(0deg);
+    }
+
+    72% {
+        transform: rotate(18deg);
+    }
+
+    76% {
+        transform: rotate(-16deg);
+    }
+
+    80% {
+        transform: rotate(14deg);
+    }
+
+    84% {
+        transform: rotate(-12deg);
+    }
+
+    88% {
+        transform: rotate(8deg);
+    }
+
+    92% {
+        transform: rotate(-4deg);
+    }
+
+    96% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Reduce el movimiento si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    .notification {
+        animation: none;
+    }
+}

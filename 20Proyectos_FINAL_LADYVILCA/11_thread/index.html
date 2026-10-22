@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hilo de comentarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="comments-container">
+
+        <header class="comments-header">
+            <div>
+                <h1>Comentarios</h1>
+                <p>Conversa, comparte ideas y responde a la comunidad.</p>
+            </div>
+            <span class="comment-count">4 comentarios</span>
+        </header>
+
+        <!-- Comentario principal -->
+        <article class="comment">
+            <div class="comment-wrapper">
+
+                <div class="content">
+                    <img class="user-photo"
+                         src="profile1.jpeg"
+                         alt="Foto de Vidarmrr">
+
+                    <div class="comment-info">
+                        <div class="header">
+                            <span class="username">@vidarmrr</span>
+                            <time class="date">Hace 5 horas</time>
+                        </div>
+
+                        <p class="text">
+                            ¡Hola a todos! Este es el comentario principal
+                            de nuestra conversación. ¿Qué opinan?
+                        </p>
+
+                        <div class="actions">
+                            <button type="button" aria-label="Me gusta">
+                                ♡ <span>Like</span>
+                            </button>
+                            <button type="button">Responder</button>
+                            <button type="button">Compartir</button>
+                            <button type="button">Seguir</button>
+                            <button type="button" class="report">Reportar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Respuestas -->
+                <div class="replies">
+
+                    <article class="comment">
+                        <div class="comment-wrapper">
+                            <div class="content">
+                                <img class="user-photo"
+                                     src="profile2.jpeg"
+                                     alt="Foto de Limon y Chile">
+
+                                <div class="comment-info">
+                                    <div class="header">
+                                        <span class="username">@limonychile</span>
+                                        <time class="date">Hace 2 días</time>
+                                    </div>
+
+                                    <p class="text">
+                                        ¡Muy interesante! Me gusta mucho
+                                        esta idea.
+                                    </p>
+
+                                    <div class="actions">
+                                        <button type="button">♡ Like</button>
+                                        <button type="button">Responder</button>
+                                        <button type="button">Compartir</button>
+                                        <button type="button">Seguir</button>
+                                        <button type="button" class="report">Reportar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="comment">
+                        <div class="comment-wrapper">
+                            <div class="content">
+                                <img class="user-photo"
+                                     src="profile3.jpeg"
+                                     alt="Foto de otro participante">
+
+                                <div class="comment-info">
+                                    <div class="header">
+                                        <span class="username">@desarrollador</span>
+                                        <time class="date">Hace 8 días</time>
+                                    </div>
+
+                                    <p class="text">
+                                        Estoy de acuerdo. Sería genial
+                                        seguir compartiendo ideas.
+                                    </p>
+
+                                    <div class="actions">
+                                        <button type="button">♡ Like</button>
+                                        <button type="button">Responder</button>
+                                        <button type="button">Compartir</button>
+                                        <button type="button">Seguir</button>
+                                        <button type="button" class="report">Reportar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="comment">
+                        <div class="comment-wrapper">
+                            <div class="content">
+                                <img class="user-photo"
+                                     src="profile2.jpeg"
+                                     alt="Foto de Limon y Chile">
+
+                                <div class="comment-info">
+                                    <div class="header">
+                                        <span class="username">@limonychile</span>
+                                        <time class="date">Hace 1 hora</time>
+                                    </div>
+
+                                    <p class="text">
+                                        Gracias por compartir.
+                                        ¡Espero leer más comentarios!
+                                    </p>
+
+                                    <div class="actions">
+                                        <button type="button">♡ Like</button>
+                                        <button type="button">Responder</button>
+                                        <button type="button">Compartir</button>
+                                        <button type="button">Seguir</button>
+                                        <button type="button" class="report">Reportar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+</body>
+</html>
