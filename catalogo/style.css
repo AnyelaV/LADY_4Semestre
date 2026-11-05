@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ENCABEZADO CON FLEXBOX */
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 7%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px #0000000d;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #172033;
+    white-space: nowrap;
+}
+
+.logo-icono {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    color: #4b5563;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #2563eb;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 22px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.boton-secundario {
+    padding: 9px 15px;
+    font-size: 13px;
+}
+
+.boton-menu {
+    white-space: nowrap;
+}
+
+/* BANNER PRINCIPAL */
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    padding: 75px 7%;
+    background: linear-gradient(135deg, #eaf1ff, #f8faff);
+}
+
+.banner-contenido {
+    max-width: 560px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.banner h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    color: #5b6475;
+    margin-bottom: 25px;
+}
+
+.banner-imagen img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px #17203320;
+}
+
+/* TÍTULOS DE SECCIÓN */
+.seccion-productos,
+.seccion-beneficios {
+    padding: 75px 7%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2 {
+    font-size: clamp(25px, 3vw, 36px);
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    color: #6b7280;
+}
+
+/* CATÁLOGO CON CSS GRID */
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #e8ebf2;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px #17203318;
+}
+
+.tarjeta > img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background-color: #e5e7eb;
+}
+
+.tarjeta-contenido {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px;
+}
+
+.categoria {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.tarjeta h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.tarjeta-contenido > p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.tarjeta-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #172033;
+    white-space: nowrap;
+}
+
+/* BENEFICIOS */
+.seccion-beneficios {
+    background-color: #ffffff;
+}
+
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.beneficio {
+    text-align: center;
+    padding: 30px 22px;
+    background-color: #f5f7fb;
+    border-radius: 14px;
+    transition: transform 0.3s;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+}
+
+.beneficio-icono {
+    display: grid;
+    place-items: center;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #dbeafe;
+    color: #2563eb;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.beneficio h3 {
+    margin-bottom: 10px;
+}
+
+.beneficio p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* PIE DE PÁGINA */
+.pie-pagina {
+    padding: 45px 7% 0;
+    background-color: #111827;
+    color: #ffffff;
+}
+
+.pie-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding-bottom: 35px;
+}
+
+.logo-pie {
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.pie-contenido h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.pie-contenido p,
+.pie-contenido a:not(.logo) {
+    display: block;
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.pie-contenido a:hover {
+    color: #60a5fa;
+}
+
+.copyright {
+    text-align: center;
+    padding: 18px 0;
+    border-top: 1px solid #374151;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+    .encabezado {
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .banner {
+        gap: 25px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+    .encabezado {
+        justify-content: center;
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .boton-menu {
+        padding: 10px 14px;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+    }
+
+    .banner-imagen img {
+        height: 240px;
+    }
+
+    .seccion-productos,
+    .seccion-beneficios {
+        padding: 50px 6%;
+    }
+
+    .catalogo,
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta > img {
+        height: 230px;
+    }
+
+    .pie-contenido {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
